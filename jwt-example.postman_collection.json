@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "21c7eb3f-7f92-495e-afb2-c93013342b62",
+		"name": "jwt-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36935959"
+	},
+	"item": [
+		{
+			"name": "/authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "aks",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "SillyPassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hello",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiYWtzIiwiaXNzIjoiaXNzdWVkYnlha3MiLCJpYXQiOjE3NjI3MTUxMTUsImV4cCI6MTc2MjcxODcxNX0.KjO7nOo5Oln2cxxIB_lQiYRtvtHbvFgSNDB7_7f6FVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/hello",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
